@@ -3,6 +3,9 @@ import { Textfield, HelloWorld } from './web-component-wrapper';
 
 class App extends Component {
 
+  // ref to sh-textfield web component for firstName. Using this ref, we can call any method of the web-component
+  firstNameRef = React.createRef();
+
   constructor(props) {
     super(props);
     this.state = {
@@ -39,6 +42,7 @@ class App extends Component {
         <div className="comp">
           <h2>Textfield Component</h2>
           <Textfield
+            ref={this.firstNameRef}
             config={{a: '1', b: '2'}}
             testArray={[1,2,3]}
             label="First Name"
@@ -57,6 +61,10 @@ class App extends Component {
         </div>
       </div>
     );
+  }
+
+  componentDidMount() {
+    console.log('firstName ref:', this.firstNameRef.current);
   }
 }
 
