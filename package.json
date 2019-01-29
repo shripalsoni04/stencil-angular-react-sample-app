@@ -12,10 +12,14 @@
     "build:core": "cd core && npm run build",
     "start:angular": "cd angular-app && ng serve",
     "start:react": "cd react-app && npm start",
-    "install": "npm install && npm run install:core && npm run install:angular && npm run install:react",
+    "install:all": "npm install && npm run install:core && npm run build:core && npm run install:angular && npm run install:react",
     "install:core": "cd core && npm install",
     "install:angular": "cd angular-app && npm install",
-    "install:react": "cd react-app && npm install"
+    "install:react": "cd react-app && npm install",
+    "clean:all": "rm -rf node_modules && npm run clean:core && npm run clean:angular && npm run clean:react",
+    "clean:core": "cd core && rm -rf node_modules && rm -rf dist",
+    "clean:angular": "cd angular-app && rm -rf node_modules",
+    "clean:react": "cd react-app && rm -rf node_modules"
   },
   "author": "Shripal Soni",
   "license": "ISC",

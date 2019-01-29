@@ -3,7 +3,7 @@ A sample application to show how to use web-components generated using stencil i
 
 ## Install
 ```
-npm run install
+npm run install:all
 ```
 This will install and setup stencil, angular and react apps.
 
