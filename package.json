@@ -1,0 +1,25 @@
+{
+  "name": "stencil-component-source",
+  "version": "1.0.0",
+  "description": "A sample stencil + angular + react application",
+  "main": "index.js",
+  "scripts": {
+    "dev:core": "cd core && npm run build:watch",
+    "dev:angular": "npm run build:core && npm run start:angular",
+    "dev:react": "npm run build:core && npm run start:react",
+    "dev:angular-core": "concurrently \"npm run dev:core\"  \"npm run start:angular\"",
+    "dev:react-core": "concurrently \"npm run dev:core\"  \"npm run start:react\"",
+    "build:core": "cd core && npm run build",
+    "start:angular": "cd angular-app && ng serve",
+    "start:react": "cd react-app && npm start",
+    "install": "npm install && npm run install:core && npm run install:angular && npm run install:react",
+    "install:core": "cd core && npm install",
+    "install:angular": "cd angular-app && npm install",
+    "install:react": "cd react-app && npm install"
+  },
+  "author": "Shripal Soni",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
