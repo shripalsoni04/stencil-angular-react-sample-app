@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
-import Textfield from './Textfield';
+import { Textfield, HelloWorld } from './web-component-wrapper';
 
 class App extends Component {
 
@@ -32,10 +31,10 @@ class App extends Component {
         <h1>React Stencil Web Component</h1>
         <div className="comp">
           <h2>Hello World Component</h2>
-          <sh-hello-world 
+          <HelloWorld
             first={firstName} 
             last={lastName}>
-          </sh-hello-world>
+          </HelloWorld>
         </div>
         <div className="comp">
           <h2>Textfield Component</h2>
@@ -46,7 +45,7 @@ class App extends Component {
             placeholder="Enter First Name"
             value={firstName}
             isRequired={false}
-            maxlength="10"
+            maxlength="20"
             onChange={this.handleFirstNameChange} />
           <Textfield
             label="Last Name"
@@ -54,7 +53,6 @@ class App extends Component {
             value={lastName}
             isRequired={true}
             maxlength="20"
-            extraProp="10"
             onChange={this.handleLastNameChange} />
         </div>
       </div>

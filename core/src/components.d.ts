@@ -79,7 +79,7 @@ export namespace Components {
     */
     'label'?: string;
     'maxlength'?: number;
-    'onOnChange'?: (event: CustomEvent) => void;
+    'onChange'?: (event: CustomEvent) => void;
     /**
     * Textfield placeholder
     */

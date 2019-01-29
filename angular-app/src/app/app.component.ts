@@ -12,5 +12,5 @@ export class AppComponent {
 
   lastName = 'Soni';
 
-  showHelloWorld = false;
+  showHelloWorld = true;
 }

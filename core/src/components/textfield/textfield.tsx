@@ -44,10 +44,10 @@ export class TextFieldComponent {
   value: string;
 
   @Event()
-  onChange: EventEmitter;
+  change: EventEmitter;
 
   handleInputChange(e) {
-    this.onChange.emit(e.target.value);
+    this.change.emit(e.target.value);
   }
 
   render() {

@@ -13,16 +13,20 @@
   <sh-textfield
     label="First Name"
     placeholder="Enter First Name"
+    [isRequired]="false"
+    maxlength="20"
     [value]="firstName"
     [config]="{a: '1', b: '2'}"
     [testArray]="[1, 2, 3]"
-    (onChange)="firstName = $event.detail">
+    (change)="firstName = $event.detail">
   </sh-textfield>
   <sh-textfield
     label="Last Name"
     placeholder="Enter Last Name"
+    [isRequired]="false"
+    maxlength="20"
     [value]="lastName"
-    (onChange)="lastName = $event.detail">
+    (change)="lastName = $event.detail">
   </sh-textfield>
-  <button type="button" (click)="showHelloWorld = !showHelloWorld">Toggle Hello World</button>
+  <!-- <button type="button" (click)="showHelloWorld = !showHelloWorld">Toggle Hello World</button> -->
 </div>
