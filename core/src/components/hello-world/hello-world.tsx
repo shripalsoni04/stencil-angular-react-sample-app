@@ -27,7 +27,7 @@ export class HelloWorldComponent {
    */
   @Prop() lastName: string;
 
-  private getText(): string {
+  getText(): string {
     return format(this.first, this.middle, this.last);
   }
 
