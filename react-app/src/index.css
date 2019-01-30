@@ -12,3 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+sh-textfield {
+  --sh-textfield-border-color: blue;
+}

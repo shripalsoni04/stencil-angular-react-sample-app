@@ -26,6 +26,13 @@
 | `change` |             | `CustomEvent<void>` |
 
 
+## CSS Custom Properties
+
+| Name                          | Description               |
+| ----------------------------- | ------------------------- |
+| `--sh-textfield-border-color` | Border color of textfield |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
