@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "description": "Stencil App Starter",
   "scripts": {
-    "build": "stencil build",
+    "build": "stencil build --prerender --dev",
+    "prebuild": "npm run -s build-all",
     "start": "stencil build --dev --watch --serve",
     "prestart": "npm run -s build-all",
     "test": "stencil test --spec --e2e",

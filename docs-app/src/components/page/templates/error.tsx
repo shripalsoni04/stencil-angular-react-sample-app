@@ -27,17 +27,13 @@ const getHelpfulMessage = (response: Response) => {
 };
 
 const appropriateEmoji = [
-  '🧐',
   '😕',
   '😟',
   '😑',
   '😧',
-  '🤭',
   '😯',
   '😮',
-  '🤨',
   '🙃',
   '🤕',
-  '🤯',
   '😫'
 ];
