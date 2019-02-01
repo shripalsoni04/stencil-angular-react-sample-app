@@ -1,5 +1,6 @@
 # sh-hello-world
-## Component to say Hello to the world :)
+
+Component to say Hello to the world :)
 
 
 <!-- Auto Generated Below -->
