@@ -1,0 +1,17 @@
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  color: var(--text-color--dark);
+  font-family: var(--heading-font-family);
+}
+
+.header-logo-container .header-logo {
+  width: 30px;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.header-logo-container .brand-name {
+  flex-shrink: 0;
+  font-size: 16px;
+}

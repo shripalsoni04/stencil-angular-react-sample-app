@@ -1,0 +1,28 @@
+docs-section-nav,
+docs-section-nav stencil-route-switch,
+docs-section-nav stencil-route {
+  display: block;
+  height: 100%;
+}
+
+.SectionNav {
+  height: 100%;
+}
+
+.SectionNav > * {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.SectionNav .link-active:after {
+  background-color: currentColor;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}

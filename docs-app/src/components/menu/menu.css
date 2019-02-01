@@ -1,0 +1,30 @@
+docs-menu {
+  background-color: var(--background);
+  border-right: solid 1px var(--line-rule-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: var(--menu-transform, none);
+  width: var(--menu-width);
+  z-index: var(--menu-z-index, initial);
+}
+
+docs-menu > header {
+  align-items: center;
+  border-bottom: solid 1px var(--line-rule-color);
+  display: flex;
+  flex: none;
+  height: var(--header-height);
+  padding: 0 1.5rem;
+}
+
+docs-menu > stencil-route-switch {
+  overflow-y: auto;
+}
+
+docs-menu nav {
+  padding: 2rem 1.5rem;
+}

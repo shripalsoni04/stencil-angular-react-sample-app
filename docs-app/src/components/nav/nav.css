@@ -1,0 +1,67 @@
+docs-nav {
+  color: var(--text-color--dark);
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+docs-nav a {
+  color: inherit;
+  font-weight: inherit;
+  transition: color 100ms ease;
+}
+
+@media (hover: hover) {
+  docs-nav a:hover {
+    color: var(--text-color);
+  }
+}
+
+docs-nav a.link-active {
+  color: var(--accent-color);
+}
+
+docs-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+docs-nav li {
+  margin-bottom: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+docs-nav li:last-child {
+  margin-bottom: 0;
+}
+
+docs-nav section li {
+  margin-bottom: 10px;
+}
+
+docs-nav header {
+  align-items: center;
+  color: var(--text-color--dark);
+  display: flex;
+}
+
+docs-nav header > svg {
+  fill: currentColor;
+  height: 0.75em;
+  margin-bottom: -0.15em;
+  margin-left: 0.25em;
+  width: 0.75em;
+}
+
+docs-nav section header + ul {
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+docs-nav section ul {
+  color: var(--text-color--light);
+  margin-left: 10px;
+}
