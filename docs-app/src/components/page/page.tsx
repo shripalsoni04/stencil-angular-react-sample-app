@@ -22,20 +22,37 @@ export class DocsPage {
   @Watch('path')
   fetchPage(path, oldPath?) {
     if (path == null || path === oldPath) return;
-    return fetch(path)
-      .then(this.validateFetch)
+
+    const promises = [this.fetchPageData(path)];
+    if(path.indexOf('/api/') > -1) {
+      promises.push(this.fetchUsage(path));
+    }
+
+    return Promise.all(promises)
       .then(this.handleNewPage)
       .catch(this.handleBadFetch);
   }
 
-  validateFetch = (response) => {
-    if (!response.ok) throw response;
-    return response.json();
+  fetchPageData = (path) => {
+    return fetch(path).then((response) => {
+      if (!response.ok) throw response;
+      return response.json();
+    });
   }
 
-  handleNewPage = (page) => {
+  fetchUsage = (path) => {
+    const usagePath = path.replace(/pages\/api/, 'usage');
+    return fetch(usagePath)
+      .then((response) => {
+        return response.ok ? response.json() : []
+      })
+      .catch(() => []);
+  }
+
+  handleNewPage = ([pageData, usageData]) => {
+    pageData.usage = usageData;
     this.badFetch = null;
-    this.page = page;
+    this.page = pageData;
   }
 
   handleBadFetch = (error: Response) => {

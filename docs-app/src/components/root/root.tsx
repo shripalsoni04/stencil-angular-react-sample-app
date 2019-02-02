@@ -9,7 +9,6 @@ export class DocsRoot {
   history: RouterHistory = null;
 
   setHistory = ({ history }: { history: RouterHistory }) => {
-    console.log('history is', history);
     if (!this.history) {
       this.history = history;
       this.history.listen((location: LocationSegments) => {

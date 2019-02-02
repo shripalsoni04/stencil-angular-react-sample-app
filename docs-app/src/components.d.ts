@@ -18,6 +18,20 @@ import {
 
 export namespace Components {
 
+  interface DocsCode {
+    'language': string;
+  }
+  interface DocsCodeAttributes extends StencilHTMLAttributes {
+    'language'?: string;
+  }
+
+  interface DocsComponentPreview {
+    'componentHTML': string;
+  }
+  interface DocsComponentPreviewAttributes extends StencilHTMLAttributes {
+    'componentHTML'?: string;
+  }
+
   interface DocsHeaderLogo {}
   interface DocsHeaderLogoAttributes extends StencilHTMLAttributes {}
 
@@ -66,10 +80,21 @@ export namespace Components {
     'label'?: string;
     'links'?: Link[];
   }
+
+  interface DocsTabs {
+    'initial': string;
+    'tabs': string;
+  }
+  interface DocsTabsAttributes extends StencilHTMLAttributes {
+    'initial'?: string;
+    'tabs'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
+    'DocsCode': Components.DocsCode;
+    'DocsComponentPreview': Components.DocsComponentPreview;
     'DocsHeaderLogo': Components.DocsHeaderLogo;
     'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
@@ -79,9 +104,12 @@ declare global {
     'DocsRoot': Components.DocsRoot;
     'DocsSectionNav': Components.DocsSectionNav;
     'DocsTableOfContents': Components.DocsTableOfContents;
+    'DocsTabs': Components.DocsTabs;
   }
 
   interface StencilIntrinsicElements {
+    'docs-code': Components.DocsCodeAttributes;
+    'docs-component-preview': Components.DocsComponentPreviewAttributes;
     'docs-header-logo': Components.DocsHeaderLogoAttributes;
     'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
@@ -91,8 +119,21 @@ declare global {
     'docs-root': Components.DocsRootAttributes;
     'docs-section-nav': Components.DocsSectionNavAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
+    'docs-tabs': Components.DocsTabsAttributes;
   }
 
+
+  interface HTMLDocsCodeElement extends Components.DocsCode, HTMLStencilElement {}
+  var HTMLDocsCodeElement: {
+    prototype: HTMLDocsCodeElement;
+    new (): HTMLDocsCodeElement;
+  };
+
+  interface HTMLDocsComponentPreviewElement extends Components.DocsComponentPreview, HTMLStencilElement {}
+  var HTMLDocsComponentPreviewElement: {
+    prototype: HTMLDocsComponentPreviewElement;
+    new (): HTMLDocsComponentPreviewElement;
+  };
 
   interface HTMLDocsHeaderLogoElement extends Components.DocsHeaderLogo, HTMLStencilElement {}
   var HTMLDocsHeaderLogoElement: {
@@ -148,7 +189,15 @@ declare global {
     new (): HTMLDocsTableOfContentsElement;
   };
 
+  interface HTMLDocsTabsElement extends Components.DocsTabs, HTMLStencilElement {}
+  var HTMLDocsTabsElement: {
+    prototype: HTMLDocsTabsElement;
+    new (): HTMLDocsTabsElement;
+  };
+
   interface HTMLElementTagNameMap {
+    'docs-code': HTMLDocsCodeElement
+    'docs-component-preview': HTMLDocsComponentPreviewElement
     'docs-header-logo': HTMLDocsHeaderLogoElement
     'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
@@ -158,9 +207,12 @@ declare global {
     'docs-root': HTMLDocsRootElement
     'docs-section-nav': HTMLDocsSectionNavElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
+    'docs-tabs': HTMLDocsTabsElement
   }
 
   interface ElementTagNameMap {
+    'docs-code': HTMLDocsCodeElement;
+    'docs-component-preview': HTMLDocsComponentPreviewElement;
     'docs-header-logo': HTMLDocsHeaderLogoElement;
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
@@ -170,6 +222,7 @@ declare global {
     'docs-root': HTMLDocsRootElement;
     'docs-section-nav': HTMLDocsSectionNavElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
+    'docs-tabs': HTMLDocsTabsElement;
   }
 
 

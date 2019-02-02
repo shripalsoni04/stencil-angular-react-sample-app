@@ -15,6 +15,8 @@ export const config: Config = {
     }
   ],
   copy: [
-    { src: 'pages/**/*.json' }
+    { src: 'pages/**/*.json' },
+    { src: 'usage/**/*.json' },
+    { src: '../node_modules/stencil-component-lib/dist', dest: './assets/js/stencil-component-lib' }
   ]
 };

@@ -1,7 +1,9 @@
+import hljs from 'highlight.js';
+
 export default (props) => {
   const { page } = props;
   const headings = [...page.headings];
-  const usage = '' ; // renderUsage(page.usage);
+  const usage = renderUsage(page.usage);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
@@ -43,7 +45,7 @@ export default (props) => {
   }
 
   return (
-    <main class="docs-api">
+    <main class="docs-api" key={page.title}>
       <div class="docs-content-pane">
         <div class="docs-content">
           <h1>{ page.title }</h1>
@@ -60,24 +62,43 @@ export default (props) => {
   );
 };
 
-// const renderUsage = (usage = {}) => {
-//   const keys = Object.keys(usage);
 
-//   if (!keys.length) {
-//     return null;
-//   }
-
-//   return (
-//     <section>
-//       <h2 id="usage">
-//         <a href="#usage">Usage</a>
-//       </h2>
-//       <docs-tabs tabs={keys.join(',')}>
-//         { keys.map(key => <div slot={key} innerHTML={usage[key]}/>) }
-//       </docs-tabs>
-//     </section>
-//   );
-// };
+const renderUsage = (lstUsage = []) => {
+  return (
+    <section>
+      <h2 id="usage">
+        <a href="#usage">Usage</a>
+      </h2>
+      {
+        lstUsage
+          .sort((a,b) => a.sortOrder - b.sortOrder)
+          .map((usage, index) => {
+            const usageKeys = Object.keys(usage).filter(key => ['angular', 'react', 'vanilla'].includes(key));
+            return (
+              <div class="example" key={index}>
+                <h3>{usage.title}</h3>
+                <div innerHTML={usage.description}></div>
+                <docs-component-preview componentHTML={usage.vanilla.code}></docs-component-preview>
+                <docs-tabs tabs={usageKeys.join(',')} initial="angular">
+                  { usageKeys.map(key => {
+                    const language = key === 'vanilla' ? 'html' : 'javascript';
+                    return (
+                      <div slot={key}>
+                        <docs-code language={language}>
+                          <div innerHTML={hljs.highlightAuto(usage[key].code, [language]).value}></div>
+                        </docs-code>
+                      </div>
+                    )
+                  })
+                  }
+                </docs-tabs>
+              </div>
+            )
+          })
+      }
+    </section>
+  )
+}
 
 const renderProperties = (properties = []) => {
   if (!properties.length) {

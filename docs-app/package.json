@@ -17,9 +17,10 @@
     "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages"
   },
   "dependencies": {
-    "@stencil/core": "~0.16.2",
+    "@stencil/core": "^0.17.1",
     "@stencil/router": "^0.3.3",
-    "docs": "file:../docs"
+    "docs": "file:../docs",
+    "stencil-component-lib": "file:../core"
   },
   "license": "MIT",
   "devDependencies": {

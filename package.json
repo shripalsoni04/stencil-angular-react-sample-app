@@ -11,10 +11,10 @@
     "dev:react-core": "concurrently \"npm run build-watch:core\"  \"npm run start:react\"",
     "build:core": "cd core && npm run build",
     "build-watch:core": "cd core && npm run build:watch",
-    "build:docs-app": "cd docs-app && npm run build",
+    "build:docs-app": "npm run build:usage-data && cd docs-app && npm run build",
     "start:angular": "cd angular-app && ng serve",
     "start:react": "cd react-app && npm start",
-    "start:docs-app": "cd docs-app && npm start",
+    "start:docs-app": "npm run build:usage-data && cd docs-app && npm start",
     "install:all": "npm install && npm run install:core && npm run build:core && npm run install:angular && npm run install:react",
     "install:core": "cd core && npm install",
     "install:angular": "cd angular-app && npm install",
@@ -22,11 +22,24 @@
     "clean:all": "rm -rf node_modules && npm run clean:core && npm run clean:angular && npm run clean:react",
     "clean:core": "cd core && rm -rf node_modules && rm -rf dist",
     "clean:angular": "cd angular-app && rm -rf node_modules",
-    "clean:react": "cd react-app && rm -rf node_modules"
+    "clean:react": "cd react-app && rm -rf node_modules",
+    "build:usage-data": "ts-node -P scripts/tsconfig.json scripts/prepare-usage-data",
+    "build-publish:core": "npm run build:core && cd core && npm publish"
   },
   "author": "Shripal Soni",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "@types/fs-extra": "^5.0.4",
+    "@types/js-beautify": "^1.8.0",
+    "@types/node": "^10.12.21",
+    "concurrently": "^4.1.0",
+    "front-matter": "^3.0.1",
+    "fs-extra": "^7.0.1",
+    "highlight.js": "^9.14.2",
+    "js-beautify": "^1.8.9",
+    "marked": "^0.6.0",
+    "node-html-parser": "^1.1.12",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.2.2"
   }
 }

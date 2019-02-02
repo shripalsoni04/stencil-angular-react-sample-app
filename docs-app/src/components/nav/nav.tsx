@@ -47,7 +47,6 @@ export class DocsNav {
 
   render() {
     const items = Object.entries(this.items);
-    console.log('items are ', items);
     return (
       <nav>
         <ul>

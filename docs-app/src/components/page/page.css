@@ -44,6 +44,15 @@ docs-page .full-screen {
   padding: 0;
 }
 
+docs-page .example {
+  margin-bottom: 50px;
+}
+
+docs-page .example > h3 {
+  padding: 0;
+  margin-bottom: 0;
+}
+
 docs-page h1 {
   margin-top: 2rem;
 }
