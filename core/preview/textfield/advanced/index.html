@@ -23,7 +23,9 @@
       const ele = document.querySelector("sh-textfield");
       ele.config = { size: 2 };
       ele.testArray = [1, 2, 3];
-      ele.addEventListener("onChange", value => console.log(value));
+      ele.addEventListener("onChange", event => {
+        console.log('textfield value is', event.detail);
+      });
     </script>
   </body>
 </html>

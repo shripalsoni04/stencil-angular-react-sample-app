@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
     <sh-textfield
       label="Name"
       placeholder="Enter Name"
-      [value]="value"
+      value="Shripal"
       maxlength="10"
-      is-required="true"
-      [config]="config"
-      [testArray]="testArray"
-      (change)="onTextfieldValueChange($event)">
+      [isRequired]="true"
+      [config]="{ size: 2}"
+      [testArray]="[1, 2, 3]"
+      (change)="handleTextfieldValueChange($event)">
     </sh-textfield>
   `,
   styles: [
@@ -24,19 +24,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdvancedComponent implements OnInit {
 
-  public config = { size: 2 };
-
-  public testArray = [1, 2, 3];
-
-  public value = 'Shripal';
-
   constructor() { }
 
   ngOnInit() { }
 
-  public onTextfieldValueChange(event) {
-    console.log('event value is', event.detail);
-    this.value = event.detail;
+  public handleTextfieldValueChange(event) {
+    console.log('textfield value is', event.detail);
   }
 
 }
