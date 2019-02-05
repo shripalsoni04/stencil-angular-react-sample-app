@@ -24,7 +24,9 @@
     "clean:angular": "cd angular-app && rm -rf node_modules",
     "clean:react": "cd react-app && rm -rf node_modules",
     "build:usage-data": "ts-node -P scripts/tsconfig.json scripts/prepare-usage-data",
-    "build-publish:core": "npm run build:core && cd core && npm publish"
+    "build-publish:core": "npm run build:core && cd core && npm publish",
+    "generate-component": "ts-node -P scripts/tsconfig.json scripts/generate-component",
+    "generate-example": "ts-node -P scripts/tsconfig.json scripts/generate-example"
   },
   "author": "Shripal Soni",
   "license": "ISC",
@@ -37,8 +39,10 @@
     "fs-extra": "^7.0.1",
     "highlight.js": "^9.14.2",
     "js-beautify": "^1.8.9",
+    "lodash": "^4.17.11",
     "marked": "^0.6.0",
     "node-html-parser": "^1.1.12",
+    "to-pascal-case": "^1.0.0",
     "ts-node": "^8.0.2",
     "typescript": "^3.2.2"
   }
