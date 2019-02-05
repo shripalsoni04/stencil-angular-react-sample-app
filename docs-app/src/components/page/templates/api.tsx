@@ -1,4 +1,6 @@
 import hljs from 'highlight.js';
+import sdk from '@stackblitz/sdk';
+import angularStackblitzJSON from '../../../stackblitz/angular.json';
 
 export default (props) => {
   const { page } = props;
@@ -84,6 +86,7 @@ const renderUsage = (lstUsage = []) => {
                     const language = key === 'vanilla' ? 'html' : 'javascript';
                     return (
                       <div slot={key}>
+                        <button onClick={() => openInStackBlitz(usage[key].code, key)} type="button">Edit</button>
                         <docs-code language={language}>
                           <div innerHTML={hljs.highlightAuto(usage[key].code, [language]).value}></div>
                         </docs-code>
@@ -203,8 +206,11 @@ const renderCustomProps = (customProps = []) => {
   );
 };
 
-
-
+function openInStackBlitz(code, languageKey) {
+  if(languageKey === 'angular') {
+    sdk.openProject(angularStackblitzJSON);
+  }
+}
 // const DEMOS = [
 //   'ion-action-sheet',
 //   'ion-alert',

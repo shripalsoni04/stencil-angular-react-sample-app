@@ -24,6 +24,7 @@
     "clean:angular": "cd angular-app && rm -rf node_modules",
     "clean:react": "cd react-app && rm -rf node_modules",
     "build:usage-data": "ts-node -P scripts/tsconfig.json scripts/prepare-usage-data",
+    "build:stackblitz": "ts-node -P scripts/tsconfig.json scripts/prepare-stackblitz-config",
     "build-publish:core": "npm run build:core && cd core && npm publish"
   },
   "author": "Shripal Soni",
@@ -41,5 +42,8 @@
     "node-html-parser": "^1.1.12",
     "ts-node": "^8.0.2",
     "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@stackblitz/sdk": "^1.2.0"
   }
 }
