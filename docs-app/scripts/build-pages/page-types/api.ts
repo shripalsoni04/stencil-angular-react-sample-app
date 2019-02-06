@@ -15,7 +15,7 @@ async function getAPIPages(): Promise<Page[]> {
   return components.map(component => {
     const title = component.tag;
     const path = `/docs/api/${title.slice(3)}`;
-    const { readme, usage, props, methods, ...contents } = component;
+    const { readme = '', usage, props, methods, ...contents } = component;
     return {
       title,
       path,
